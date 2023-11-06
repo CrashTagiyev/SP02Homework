@@ -1,0 +1,36 @@
+﻿<Window x:Class="SP02Homework.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SP02Homework"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="250" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Row="0">
+                <TextBlock Text="From  " VerticalAlignment="Center" FontSize="23"/>
+                <TextBox x:Name="From_TB" Height="25" Width="400"></TextBox>
+                <Button Grid.Row="1" Height="30" Width="100" Margin="10,0,0,0"   Click="Select_From_Text">Open</Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <TextBlock Text="To      " VerticalAlignment="Center" FontSize="23"/>
+                <TextBox x:Name="To_TB" Height="25" Width="400"></TextBox>
+                <Button Grid.Row="1" Height="30" Width="100" Margin="10,0,0,0"   Click="Select_To_File">Open</Button>
+            </StackPanel>
+        </Grid>
+
+        <ProgressBar Grid.Row="1" x:Name="Download_Bar" Width="570" Height="20" Margin="10,0,0,80" HorizontalAlignment="Left"  Value="{Binding ProgressBarValue,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></ProgressBar>
+        <Button Grid.Row="1" Height="30" Width="100" Margin="0,0,200,0" Click="Suspend_Button_Click" >Suspend</Button>
+        <Button Grid.Row="1" Height="30" Width="100" Margin="220,0,200,0" Click="Resume_Button_Click"  >Resume</Button>
+        <Button Grid.Row="1" Height="30" Width="100" Margin="240,0,0,0" Click="Start_Downloading"  >Start</Button>
+    </Grid>
+</Window>
